@@ -26,7 +26,7 @@ args = vars(ap.parse_args())
 # load the image, convert it to grayscale, and blur it slightly
 
 #image = cv2.imread(args["images/example_01.png"])
-image = cv2.imread("images/example_01.png")
+image = cv2.imread("images/example_04.png")
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 gray = cv2.GaussianBlur(gray, (7, 7), 0)
 
@@ -49,7 +49,7 @@ pixelsPerMetric = None
 # loop over the contours individually
 for c in cnts:
 	# if the contour is not sufficiently large, ignore it
-	if cv2.contourArea(c) < 100:
+	if cv2.contourArea(c) < 500:
 		continue
 
 	# compute the rotated bounding box of the contour
@@ -96,13 +96,13 @@ for c in cnts:
 	# compute the Euclidean distance between the midpoints
 	dA = dist.euclidean((tltrX, tltrY), (blbrX, blbrY))
 	dB = dist.euclidean((tlblX, tlblY), (trbrX, trbrY))
-
+	#print(dA,dB)
 	# if the pixels per metric has not been initialized, then
 	# compute it as the ratio of pixels to supplied metric
 	# (in this case, inches)
 	if pixelsPerMetric is None:
 		#pixelsPerMetric = dB / args["width"]
-		pixelsPerMetric = dB / 0.955
+		pixelsPerMetric = dA / 69.48
 
 	# compute the size of the object
 	dimA = dA / pixelsPerMetric
