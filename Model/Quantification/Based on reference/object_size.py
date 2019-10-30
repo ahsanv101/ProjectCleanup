@@ -97,25 +97,36 @@ for c in cnts:
 	dA = dist.euclidean((tltrX, tltrY), (blbrX, blbrY))
 	dB = dist.euclidean((tlblX, tlblY), (trbrX, trbrY))
 	#print(dA,dB)
+	HeightInMM = dA * 0.26458333
+	WidthInMM = dB * 0.26458333
+
+	Distance = 2.1 * 10 * 0.64008
+	FocalLength =4.15
+
+	RealH = Distance * HeightInMM / FocalLength
+	RealW = Distance * WidthInMM / FocalLength
+	print(RealH,RealW)
 	# if the pixels per metric has not been initialized, then
 	# compute it as the ratio of pixels to supplied metric
 	# (in this case, inches)
-	if pixelsPerMetric is None:
-		#pixelsPerMetric = dB / args["width"]
-		pixelsPerMetric = dA / 69.48
+	# if pixelsPerMetric is None:
+	# 	#pixelsPerMetric = dB / args["width"]
+	# 	pixelsPerMetric = dA / 69.48
+	#
+	# # compute the size of the object
+	# dimA = dA / pixelsPerMetric
+	# dimB = dB / pixelsPerMetric
 
-	# compute the size of the object
-	dimA = dA / pixelsPerMetric
-	dimB = dB / pixelsPerMetric
 
-	# draw the object sizes on the image
-	cv2.putText(orig, "{:.1f}in".format(dimA),
-		(int(tltrX - 15), int(tltrY - 10)), cv2.FONT_HERSHEY_SIMPLEX,
-		0.65, (255, 255, 255), 2)
-	cv2.putText(orig, "{:.1f}in".format(dimB),
-		(int(trbrX + 10), int(trbrY)), cv2.FONT_HERSHEY_SIMPLEX,
-		0.65, (255, 255, 255), 2)
 
-	# show the output image
-	cv2.imshow("Image", orig)
-	cv2.waitKey(0)
+	# # draw the object sizes on the image
+	# cv2.putText(orig, "{:.1f}in".format(dimA),
+	# 	(int(tltrX - 15), int(tltrY - 10)), cv2.FONT_HERSHEY_SIMPLEX,
+	# 	0.65, (255, 255, 255), 2)
+	# cv2.putText(orig, "{:.1f}in".format(dimB),
+	# 	(int(trbrX + 10), int(trbrY)), cv2.FONT_HERSHEY_SIMPLEX,
+	# 	0.65, (255, 255, 255), 2)
+	#
+	# # show the output image
+	# cv2.imshow("Image", orig)
+	# cv2.waitKey(0)
