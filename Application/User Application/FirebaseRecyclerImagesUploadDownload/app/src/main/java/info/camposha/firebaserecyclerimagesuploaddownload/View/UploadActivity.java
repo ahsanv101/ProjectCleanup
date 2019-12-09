@@ -33,7 +33,7 @@ public class UploadActivity extends AppCompatActivity{
 
     private static final int PICK_IMAGE_REQUEST = 1;
 
-    private Button chooseImageBtn;
+    private Button chooseImageBtn ;
     private Button uploadBtn;
     private EditText nameEditText;
     private EditText descriptionEditText;
@@ -52,14 +52,23 @@ public class UploadActivity extends AppCompatActivity{
         setContentView ( R.layout.activity_upload );
 
         chooseImageBtn = findViewById(R.id.button_choose_image);
+        //chooseImageBtn2 = findViewById(R.id.button_choose_image2);
         uploadBtn = findViewById(R.id.uploadBtn);
         nameEditText = findViewById(R.id.nameEditText);
         descriptionEditText = findViewById ( R.id.descriptionEditText );
         chosenImageView = findViewById(R.id.chosenImageView);
+        //chosenImageView2 = findViewById(R.id.chosenImageView2);
         uploadProgressBar = findViewById(R.id.progress_bar);
 
         mStorageRef = FirebaseStorage.getInstance().getReference("teachers_uploads");
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("teachers_uploads");
+
+        chooseImageBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFileChooser();
+            }
+        });
 
         chooseImageBtn.setOnClickListener(new View.OnClickListener() {
             @Override

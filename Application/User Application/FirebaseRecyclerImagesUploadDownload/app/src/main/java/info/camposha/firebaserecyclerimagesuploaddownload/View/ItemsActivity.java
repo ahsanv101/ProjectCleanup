@@ -103,8 +103,9 @@ public class ItemsActivity extends AppCompatActivity implements RecyclerAdapter.
         Teacher selectedItem = mTeachers.get(position);
         final String selectedKey = selectedItem.getKey();
 
-        StorageReference imageRef = mStorage.getReferenceFromUrl(selectedItem.getImageUrl());
-        imageRef.delete().addOnSuccessListener(new OnSuccessListener<Void> () {
+        StorageReference imageRef1 = mStorage.getReferenceFromUrl(selectedItem.getImageUrl());
+
+        imageRef1.delete().addOnSuccessListener(new OnSuccessListener<Void> () {
             @Override
             public void onSuccess(Void aVoid) {
                 mDatabaseRef.child(selectedKey).removeValue();

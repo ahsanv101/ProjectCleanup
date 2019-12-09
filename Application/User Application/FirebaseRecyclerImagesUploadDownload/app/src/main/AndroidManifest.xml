@@ -14,10 +14,7 @@
         <activity
             android:name=".View.MainActivity"
             android:label="FirebaseImages ">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity
             android:name=".View.ItemsActivity"
@@ -32,6 +29,16 @@
             android:label="Details Page "
             android:parentActivityName=".View.ItemsActivity" />
 
+        <activity
+            android:name=".View.login"
+            android:label="Login Page" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+            </activity>
+        <activity android:name=".View.Register"
+            android:label="Register Page" />
     </application>
 
 </manifest>
