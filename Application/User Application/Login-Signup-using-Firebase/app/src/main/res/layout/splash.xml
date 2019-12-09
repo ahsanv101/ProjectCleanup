@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/trees"
+    android:orientation="vertical">
+
+
+    <bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+        android:src="@drawable/trees"
+        android:tileMode="repeat" />
+    <ImageView
+        android:id="@+id/logo_id"
+        android:layout_width="match_parent"
+        android:layout_height="705dp"
+        android:gravity="center"
+        android:src="@drawable/logo_transparent" />
+
+
+
+
+</RelativeLayout>

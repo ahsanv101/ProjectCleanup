@@ -1,9 +1,53 @@
-import os
-import caffe
-from pylab import *
-from PIL import Image
-import numpy as np
-import cv2
+##import os
+##import caffe
+##from pylab import *
+##from PIL import Image
+##import numpy as np
+##import cv2
+##
+
+import datetime
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import storage
+from firebase_admin import db
+
+def listener(event):
+    #print(event.event_type)  # can be 'put' or 'patch'
+    #print(event.path)  # relative to the reference, it seems
+    print(event.data)
+
+
+cred = credentials.Certificate('ServiceAccountKey.json')
+firebase_admin.initialize_app(cred, {
+    'storageBucket': 'ionicimageupload-977ea.appspot.com',
+    'databaseURL': 'https://ionicimageupload-977ea.firebaseio.com/'
+})
+# Get a database reference to our posts
+ref = db.reference().listen(listener)
+# Read the data at the posts reference (this is a blocking operation)
+
+print(ref)
+   # print("nothing")
+
+
+#bucket = storage.bucket()
+#blob = bucket.get_blob('teachers_uploads/1570037881437.jpg')
+#blob.download_to_filename('destination_file_name/new.jpg')
+
+
+
+
+#download_blob([],'teachers_uploads/1570037881437.jpg',"new")
+#print(blob.generate_signed_url(datetime.timedelta(seconds=300), method='GET'))
+#print(bucket.name)
+
+
+# As an admin, the app has access to read and write all data, regradless of Security Rules
+#ref = db.reference('restricted_access/secret_document')
+#print(ref.get())
+
+
 
 
 def gatherImages(folder,imageNames=None):
@@ -83,18 +127,18 @@ def getPredictionsFor(images,names,size,thresh,output_folder):
         except:
             pass
 
-
-mean_filename='SpotGarbage_GarbNet/garbnet_mean.binaryproto'
-deploy_filename = 'SpotGarbage_GarbNet/deploy_garbnet.prototxt'
-caffemodel_file = 'SpotGarbage_GarbNet/garbnet_fcn.caffemodel'
-
-proto_data = open(mean_filename, "rb").read()
-a = caffe.io.caffe_pb2.BlobProto.FromString(proto_data)
-mean  = caffe.io.blobproto_to_array(a)[0]
-
-net = caffe.Net(deploy_filename,caffemodel_file,caffe.TEST)
-
-#specify 'input' folder containing images for prediction
-images,names = gatherImages('input')
-#specify 'output' folder to store segmented predictions
-getPredictionsFor(images,names,4,0.999,'output')
+##
+##mean_filename='SpotGarbage_GarbNet/garbnet_mean.binaryproto'
+##deploy_filename = 'SpotGarbage_GarbNet/deploy_garbnet.prototxt'
+##caffemodel_file = 'SpotGarbage_GarbNet/garbnet_fcn.caffemodel'
+##
+##proto_data = open(mean_filename, "rb").read()
+##a = caffe.io.caffe_pb2.BlobProto.FromString(proto_data)
+##mean  = caffe.io.blobproto_to_array(a)[0]
+##
+##net = caffe.Net(deploy_filename,caffemodel_file,caffe.TEST)
+##
+###specify 'input' folder containing images for prediction
+##images,names = gatherImages('input')
+###specify 'output' folder to store segmented predictions
+##getPredictionsFor(images,names,4,0.999,'output')

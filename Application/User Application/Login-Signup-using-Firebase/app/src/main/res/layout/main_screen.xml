@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/trees"
+    android:orientation="vertical"
+    tools:context="com.example.shiva.try1.Register">
+
+
+    <Button
+        android:id="@+id/btn_pick"
+        android:layout_width="155dp"
+        android:layout_height="45dp"
+        android:text="View Job"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="670dp" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="137dp"
+        android:layout_height="42dp"
+        android:text="Upload Job"
+        tools:layout_editor_absoluteX="223dp"
+        tools:layout_editor_absoluteY="670dp" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Switch"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="352dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="391dp" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Capture"
+        tools:layout_editor_absoluteX="155dp"
+        tools:layout_editor_absoluteY="290dp" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="360dp"
+        android:layout_height="208dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Description"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="427dp" />
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/trees"
+    android:orientation="vertical"
+    tools:context="com.example.shiva.try1.login">
+
+    <bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+           android:src="@drawable/trees"
+           android:tileMode="repeat" />
+
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="362dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:hint="df"
+        android:text="User Login "
+        android:textColor="#000"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textEmailAddress"
+        android:textColor="#000" />
+
+    <EditText
+        android:id="@+id/editPassword"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editEmail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Enter Password"
+        android:inputType="textPassword"
+        android:textColor="#000" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editPassword"
+        android:layout_marginTop="20dp"
+        android:text="Log IN " />
+
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonLogin"
+        android:layout_marginTop="20dp"
+        android:text="NOT A USER? | SIGN UP" />
+
+
+</RelativeLayout>
