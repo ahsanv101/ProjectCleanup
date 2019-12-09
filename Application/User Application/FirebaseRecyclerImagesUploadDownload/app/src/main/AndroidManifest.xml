@@ -16,6 +16,14 @@
             android:label="FirebaseImages ">
 
         </activity>
+        <activity android:name=".View.SplashActivity"
+            android:label="Splash Screen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity
             android:name=".View.ItemsActivity"
             android:label="List Page "
@@ -32,11 +40,7 @@
         <activity
             android:name=".View.login"
             android:label="Login Page" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-            </activity>
+        </activity>
         <activity android:name=".View.Register"
             android:label="Register Page" />
     </application>

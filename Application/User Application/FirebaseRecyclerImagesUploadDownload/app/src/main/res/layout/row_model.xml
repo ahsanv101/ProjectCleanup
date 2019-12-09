@@ -6,7 +6,9 @@
     android:layout_margin="5dp"
     card_view:cardCornerRadius="5dp"
     card_view:cardElevation="10dp"
-    android:layout_height="200dp">
+    android:layout_height="200dp"
+    android:background="@drawable/notrees"
+    android:orientation="vertical">
 
     <LinearLayout
         android:orientation="horizontal"
