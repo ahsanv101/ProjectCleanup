@@ -17,8 +17,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:text="User Login "
+        android:gravity="bottom"
+        android:text="Login"
         android:textColor="#FFF"
         android:textSize="20dp"
         android:hint="df"/>
@@ -27,7 +27,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
-
+        android:hint="Enter Email"
         android:textColor="#FFF"
         android:ems="10"
         android:layout_below="@+id/textView"
@@ -55,7 +55,9 @@
         android:id="@+id/buttonLogin"
         android:layout_below="@+id/editPassword"
         android:layout_marginTop="20dp"
-        android:text="Log IN "/>
+        android:text="Log IN "
+        android:textColor="#FFF"
+        android:background="@drawable/my_button_bg"/>
 
     <Button
         android:id="@+id/buttonRegister"
@@ -63,6 +65,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonLogin"
         android:layout_marginTop="20dp"
-        android:text="NOT A USER? | SIGN UP" />
+        android:text="NOT A USER? | SIGN UP"
+        android:textColor="#FFF"
+        android:background="@drawable/my_button_bg"
+        />
 
 </RelativeLayout>

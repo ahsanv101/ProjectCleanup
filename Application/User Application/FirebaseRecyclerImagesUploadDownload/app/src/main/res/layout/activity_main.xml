@@ -24,44 +24,51 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/button_zone"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/logo"
+        android:src="@drawable/logo_transparent"
         android:contentDescription="@string/app_name"/>
 
     <LinearLayout
         android:id="@+id/button_zone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_centerInParent="true">
 
         <Button
             android:id="@+id/openTeachersActivityBtn"
             style="?android:attr/button"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="View All"
-            android:textColor="@color/white"/>
+            android:layout_marginTop="20dp"
+            android:textColor="#FFF"
+            android:background="@drawable/my_button_bg"/>
 
         <Button
             android:id="@+id/openUploadActivityBtn"
             style="?android:attr/button"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
+            android:layout_marginTop="20dp"
             android:text="Add New"
-            android:textColor="@color/white"/>
+            android:textColor="#FFF"
+            android:background="@drawable/my_button_bg"/>
 
         <Button
             android:id="@+id/logoutBtn"
             style="?android:attr/button"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
             android:text="Logout"
-            android:textColor="@color/white"/>
+            android:layout_marginTop="20dp"
+            android:textColor="#FFF"
+            android:background="@drawable/my_button_bg"
+            />
 
     </LinearLayout>
 

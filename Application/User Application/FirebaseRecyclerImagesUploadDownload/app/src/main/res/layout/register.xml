@@ -18,16 +18,17 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:text="User Sign Up"
-        android:textColor="#000"
-        android:textSize="20dp" />
+        android:text="Register"
+        android:textColor="#FFF"
+        android:textSize="20dp"
+        android:hint="df"/>
 
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:hint="Enter Name"
-        android:textColor="#000"
+        android:textColor="#FFF"
         android:ems="10"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
@@ -40,7 +41,7 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:hint="Enter Email"
-        android:textColor="#000"
+        android:textColor="#FFF"
         android:ems="10"
         android:layout_below="@+id/editName"
         android:layout_centerHorizontal="true"
@@ -53,7 +54,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:hint="Enter Password"
-        android:textColor="#000"
+        android:textColor="#FFF"
         android:ems="10"
         android:layout_below="@+id/editEmail"
         android:layout_centerHorizontal="true"
@@ -67,13 +68,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/editPassword"
         android:layout_marginTop="20dp"
-        android:text="SIGN UP" />
+        android:text="SIGN UP"
+        android:textColor="#FFF"
+        android:background="@drawable/my_button_bg"/>
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonRegister"
         android:layout_marginTop="20dp"
-        android:text="LOGIN" />
+        android:text="LOGIN"
+        android:textColor="#FFF"
+        android:background="@drawable/my_button_bg"/>
 
 </RelativeLayout>

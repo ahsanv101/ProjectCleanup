@@ -13,11 +13,11 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".View.MainActivity"
-            android:label="FirebaseImages ">
+            android:label="Dashboard ">
 
         </activity>
         <activity android:name=".View.SplashActivity"
-            android:label="Splash Screen">
+            android:label="Project Cleanup">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

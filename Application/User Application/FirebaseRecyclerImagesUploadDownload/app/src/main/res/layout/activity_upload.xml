@@ -33,6 +33,7 @@
                 android:gravity="center"
                 android:textStyle="bold"
                 android:text="Enter Garbage Details"
+                android:textColor="#FFF"
                 android:textSize="20dp" />
 
 
@@ -42,7 +43,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:inputType="text"
-                android:hint="Name"
+                android:hint="Your Name"
+                android:textColor="#FFF"
                 android:layout_marginLeft="16dp" />
 
             <EditText
@@ -52,6 +54,7 @@
                 android:layout_marginStart="16dp"
                 android:minLines="3"
                 android:inputType="text"
+                android:textColor="#FFF"
                 android:hint="Description"
                 android:layout_marginLeft="16dp" />
 
@@ -63,13 +66,13 @@
                 android:layout_height="wrap_content">
                 <Button
                     android:id="@+id/button_choose_image"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:textColor="@color/white"
-                    android:background="@color/colorPrimary"
                     android:text="Choose Image"
-                    android:layout_marginLeft="16dp" />
+                    android:layout_marginLeft="16dp"
+                    android:textColor="#FFF"
+                    android:background="@drawable/my_button_bg"/>
                 <ImageView
                     android:id="@+id/chosenImageView"
                     android:layout_width="match_parent"
@@ -81,8 +84,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_gravity="center"
-                android:background="@color/colorPrimary"
-                android:textColor="@color/white"
+                android:textColor="#FFF"
+                android:background="@drawable/my_button_bg"
                 android:gravity="center"
                 android:text="Upload"
                 android:layout_marginLeft="16dp" />
