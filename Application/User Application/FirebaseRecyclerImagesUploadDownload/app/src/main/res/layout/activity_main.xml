@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="View All"
-            android:textColor="@color/dark"/>
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/openUploadActivityBtn"
@@ -51,7 +51,7 @@
             android:layout_weight="1"
             android:clickable="true"
             android:text="Add New"
-            android:textColor="@color/dark"/>
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/logoutBtn"
@@ -61,7 +61,7 @@
             android:layout_weight="1"
             android:clickable="true"
             android:text="Logout"
-            android:textColor="@color/dark"/>
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 

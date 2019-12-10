@@ -14,8 +14,21 @@ from firebase_admin import db
 
 def listener(event):
     #print(event.event_type)  # can be 'put' or 'patch'
-    #print(event.path)  # relative to the reference, it seems
-    print(event.data)
+
+    # print(event.path)  # relative to the reference, it seems
+    try:
+        url = event.data['imageUrl'].split('/')[7].split('?')[0].replace('%2F', '/')
+        print(event.path)
+
+        #bucket = storage.bucket()
+        #blob = bucket.get_blob(url)
+       # file = url.split('/')[1]
+      # blob.download_to_filename('input/'+file)
+
+    except KeyError:
+        print("All is Well. Try next time\n")
+    # j = {'description': '', 'imageUrl': 'https://firebasestorage.googleapis.com/v0/b/ionicimageupload-977ea.appspot.com/o/teachers_uploads%2F1575902554178.jpg?alt=media&token=472c506b-7b54-4f86-a265-ae54f3d65734', 'name': 'No Name'}
+    # print(j['imageUrl'])
 
 
 cred = credentials.Certificate('ServiceAccountKey.json')
@@ -23,24 +36,17 @@ firebase_admin.initialize_app(cred, {
     'storageBucket': 'ionicimageupload-977ea.appspot.com',
     'databaseURL': 'https://ionicimageupload-977ea.firebaseio.com/'
 })
+#bucket = storage.bucket()
+#blob = bucket.get_blob('teachers_uploads/1575899407118.png')
+#blob.download_to_filename('input/1575899407118.png')
+
+
 # Get a database reference to our posts
 ref = db.reference().listen(listener)
 # Read the data at the posts reference (this is a blocking operation)
-
-print(ref)
-   # print("nothing")
-
-
-#bucket = storage.bucket()
-#blob = bucket.get_blob('teachers_uploads/1570037881437.jpg')
-#blob.download_to_filename('destination_file_name/new.jpg')
-
-
-
-
-#download_blob([],'teachers_uploads/1570037881437.jpg',"new")
-#print(blob.generate_signed_url(datetime.timedelta(seconds=300), method='GET'))
-#print(bucket.name)
+j = []
+#j = ref
+# print(ref)
 
 
 # As an admin, the app has access to read and write all data, regradless of Security Rules
