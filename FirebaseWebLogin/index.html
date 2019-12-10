@@ -1,0 +1,81 @@
+<html>
+<head>
+  <title>Project Cleanup</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <!-- The core Firebase JS SDK is always required and must be listed first 
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js"></script>
+-->
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-storage.js"></script>
+</head>
+<body>
+
+  <div id="login_div" class="main-div">
+    <h1>Project Cleanup</h1>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
+
+    <button onclick="login()">Login to Account</button>
+  </div>
+
+  <div id="user_div" class="loggedin-div">
+    <h3>Welcome User</h3>
+    <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+
+
+  <!--<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBPmZU5GIVK_6iDzROpMaYgUaqVu4FadlY",
+      authDomain: "fir-web-login-8b7c5.firebaseapp.com",
+      databaseURL: "https://fir-web-login-8b7c5.firebaseio.com",
+      projectId: "fir-web-login-8b7c5",
+      storageBucket: "fir-web-login-8b7c5.appspot.com",
+      messagingSenderId: "301701306998"
+    };
+    firebase.initializeApp(config);
+  </script>-->
+  <!--<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyD87nk1Z30M8ah4abuEI4laPFi_WGivyzI",
+    authDomain: "cleanup-6eca8.firebaseapp.com",
+    databaseURL: "https://cleanup-6eca8.firebaseio.com",
+    projectId: "cleanup-6eca8",
+    storageBucket: "cleanup-6eca8.appspot.com",
+    messagingSenderId: "797157734948",
+    appId: "1:797157734948:web:eb2cffe9cf3bbc063376b1",
+    measurementId: "G-DR1PF7Y1PY"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  //firebase.analytics();
+</script>-->
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCffNO3UhqRlPX8MZ8-EAeAFuurtrQfcF8",
+    authDomain: "ionicimageupload-977ea.firebaseapp.com",
+    databaseURL: "https://ionicimageupload-977ea.firebaseio.com",
+    projectId: "ionicimageupload-977ea",
+    storageBucket: "ionicimageupload-977ea.appspot.com",
+    messagingSenderId: "898174057655",
+    appId: "1:898174057655:web:b50556f356aa8e4b17e132"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+  <script src="index.js"></script>
+
+</body>
+</html>
