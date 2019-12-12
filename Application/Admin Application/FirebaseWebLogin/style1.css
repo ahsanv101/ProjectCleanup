@@ -23,15 +23,16 @@ body{
 	border-bottom: 6px solid #4caf50;
 	margin-bottom: 50px;
 	text-align: center;
+	color:black;
 }
 .List{
 
 	width: 400px;
 	position: absolute;
-	top: 330px;
+	top: 400px;
 	left: 18%;
 	transform: translate(-50%,-50%);
-	color: black;
+	color: white;
 
 
 }
