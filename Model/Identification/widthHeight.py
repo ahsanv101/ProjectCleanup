@@ -1,6 +1,6 @@
 import imageio
 import numpy as np
-
+import math
 
 
 def coloredPixels(im, col):
@@ -9,7 +9,7 @@ def coloredPixels(im, col):
         for j in range(len(im[0])):
             if np.allclose(im[i][j], col):
                 k.append([i,j])
-        print(i)
+        #print(i)
     return k
 
 
@@ -33,35 +33,33 @@ def getWidthHeight(k):
     height = abs(maxY - minY)
     return width, height
 
-
+def getSensorWidth(horzifov,focal):
+    return math.tan(math.radians(horzifov/2))*2*focal
 
 def pixelTomm(pixel,dpi):
-    return pixel*(25.5/dpi)
+    return pixel*25.4/dpi
     
-def getActualWidthHeight(height,width,dist,focal,dpi):
-    mmheight=pixelTomm(height,dpi)
-    mmwidth = pixelTomm(width,dpi)
-    h=(mmheight*dist)/focal
-    w=(mmwidth*dist)/focal
-    return w,h
+def getActualWidth(width,dist,focal):
+    actualWidth=(width*dist)/focal
+    return actualWidth
 
-def main(filename):
+def getActualHeight(actualWidth,pixwidth,pixheight):
+    pixelPerMetric = pixwidth/actualWidth
+    return pixheight/pixelPerMetric
+
+def main(filename,dist,focal,horizfov):
     im = imageio.imread(filename)
     green = [0,255,0]
     colPixList = coloredPixels(im, green)
-    width, height =getWidthHeight(colPixList)
-    return getActualWidthHeight(height,width,2.28,30,320)
+    pixwidth, pixheight =getWidthHeight(colPixList)
+    print(pixwidth,pixheight)
+    sensorw = getSensorWidth(horizfov,focal)
+    widthmm=pixwidth*sensorw/im.shape[1]
+    actualWidth=getActualWidth(widthmm,dist,focal)
+    actualHeight=getActualHeight(actualWidth,pixwidth,pixheight)
+    return actualWidth,actualHeight
 
-#width is 825
-#height is 333
-#focal 30
-#dpi 320
-#dis 2.5
-
-width, height = main('output/o2.jpg')
+width, height = main('output/ol.jpeg',2.5,3.20,59)
 print("\nWidth of the garbage is:", width)
 print("\nHeight of the garbage is:", height)
 
-
-#width 0.55
-#height 1.524
