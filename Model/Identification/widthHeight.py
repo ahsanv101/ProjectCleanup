@@ -59,16 +59,16 @@ def calculate(filename,dist,focal,horizfov):
     actualHeight=getActualHeight(actualWidth,pixwidth,pixheight)
     return actualWidth,actualHeight
 
-def main(filename1,filename2,dist,focal,horizfov):
+def main(filename1,filename2,dist1,dist2,focal,horizfov):
     x,y =calculate(filename1,dist,focal,horizfov)
-    z,w = calculate(filename2,dist,focal,horizfov)
+    z,w = calculate(filename2,dist2,focal,horizfov)
     print("\nWidth of the filename1 is:", x)
     print("\nHeight of the filename1 is:", y)
     print("\nWidth of the filename2 is:", z)
     print("\nHeight of the filename2 is:", w)
     return x * y * z
 
-volume = main('output/s1.jpg','output/s2.jpg',1.27,3.20,59)
+volume = main('output/s1.jpg','output/s2.jpg',1.27,1.27,3.20,59)
 print("\nVolume of the garbage is:", volume)
 
 

@@ -1,10 +1,10 @@
-##import os
-##import caffe
-##from pylab import *
-##from PIL import Image
-##import numpy as np
-##import cv2
-##
+import os
+# import caffe
+# from pylab import *
+# from PIL import Image
+# import numpy as np
+# import cv2
+
 
 import datetime
 import firebase_admin
@@ -21,19 +21,36 @@ def listener(event):
         #print(event.event_type)
         #print(event.path)
         ref=db.reference(event.path)
-        ref.push({
-             'location': 'vini vidi vici',
-             'volume': '242.12354'
-         })
+        #ref.push({
+         #    'location': 'vini vidi vici',
+          #   'volume': '242.12354'
+         #})
         print(ref.get())
-        #bucket = storage.bucket()
-        #blob = bucket.get_blob(url)
-       # file = url.split('/')[1]
-      # blob.download_to_filename('input/'+file)
+        bucket = storage.bucket()
+        blob = bucket.get_blob(url)
+        file = url.split('/')[1]
+        print(file,"\n\nthis is ")
+        blob.download_to_filename('input/'+file)
+
+        #
+        # mean_filename='SpotGarbage_GarbNet/garbnet_mean.binaryproto'
+        # deploy_filename = 'SpotGarbage_GarbNet/deploy_garbnet.prototxt'
+        # caffemodel_file = 'SpotGarbage_GarbNet/garbnet_fcn.caffemodel'
+        #
+        # proto_data = open(mean_filename, "rb").read()
+        # a = caffe.io.caffe_pb2.BlobProto.FromString(proto_data)
+        # mean  = caffe.io.blobproto_to_array(a)[0]
+        #
+        # net = caffe.Net(deploy_filename,caffemodel_file,caffe.TEST)
+        #
+        # #specify 'input' folder containing images for prediction
+        # images,names = gatherImages('input')
+        # #specify 'output' folder to store segmented predictions
+        # getPredictionsFor(images,names,4,0.999,'output')
+
 
     except KeyError:
         print("Starting...\n")
-
 
 cred = credentials.Certificate('ServiceAccountKey.json')
 firebase_admin.initialize_app(cred, {
@@ -124,19 +141,3 @@ def getPredictionsFor(images,names,size,thresh,output_folder):
             out_.save(output_folder + '/output_' + names[i])
         except:
             pass
-
-##
-##mean_filename='SpotGarbage_GarbNet/garbnet_mean.binaryproto'
-##deploy_filename = 'SpotGarbage_GarbNet/deploy_garbnet.prototxt'
-##caffemodel_file = 'SpotGarbage_GarbNet/garbnet_fcn.caffemodel'
-##
-##proto_data = open(mean_filename, "rb").read()
-##a = caffe.io.caffe_pb2.BlobProto.FromString(proto_data)
-##mean  = caffe.io.blobproto_to_array(a)[0]
-##
-##net = caffe.Net(deploy_filename,caffemodel_file,caffe.TEST)
-##
-###specify 'input' folder containing images for prediction
-##images,names = gatherImages('input')
-###specify 'output' folder to store segmented predictions
-##getPredictionsFor(images,names,4,0.999,'output')
